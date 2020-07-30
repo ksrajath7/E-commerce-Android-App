@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="FashionApp.Their.Authentication.SkinTone">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="AspectFill" Source="BG3.png">
+
+            </Image>
+            <Frame Margin="0" HasShadow="False" CornerRadius="0" BackgroundColor="Blue" Padding="20,50,20,10" VerticalOptions="Start">
+                <ffsvg:SvgCachedImage Source="backBlue.svg" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center">
+                    <ffsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+                    </ffsvg:SvgCachedImage.GestureRecognizers>
+                </ffsvg:SvgCachedImage>
+            </Frame>
+
+            <Frame Margin="0,0,0,0" VerticalOptions="End" HasShadow="False" CornerRadius="0" BackgroundColor="Red" Padding="20,50,20,10">
+
+            </Frame>
+
+
+            <!-- NEXT -->
+                    
+            <Grid Margin="0,0,0,20" VerticalOptions="End" Grid.Row="1" RowSpacing="0" BackgroundColor="Green">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <cutie:PancakeView CornerRadius="100" HorizontalOptions="Center" Padding="55,17,55,17" Margin="0,0,0,20" Grid.ColumnSpan="6" Grid.Row="0" x:Name="Next" VerticalOptions="End">
+                    <cutie:PancakeView.BackgroundGradientStops>
+                        <cutie:GradientStopCollection>
+                            <cutie:GradientStop Offset=".2" Color="#6d54f8"></cutie:GradientStop>
+                            <!-- 005eff -->
+                            <cutie:GradientStop Offset=".8" Color="#663df9"></cutie:GradientStop>
+                            <!-- 396ff2 -->
+                        </cutie:GradientStopCollection>
+                    </cutie:PancakeView.BackgroundGradientStops>
+                    <cutie:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Next_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </cutie:PancakeView.GestureRecognizers>
+                    <Label FontSize="18" Text="Next" TextColor="#fff" HorizontalTextAlignment="Center" IsVisible="True"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+
+                </cutie:PancakeView>
+
+                <BoxView WidthRequest="27" Grid.Column="1" HeightRequest="2" BackgroundColor="LightGray" Grid.Row="1"></BoxView>
+                <BoxView WidthRequest="27" Grid.Column="2" HeightRequest="2" BackgroundColor="LightGray" Grid.Row="1"></BoxView>
+                <BoxView WidthRequest="27" Grid.Column="3" HeightRequest="2" BackgroundColor="LightGray" Grid.Row="1"></BoxView>
+                <BoxView WidthRequest="27" Grid.Column="4" HeightRequest="2" BackgroundColor="LightGray" Grid.Row="1"></BoxView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

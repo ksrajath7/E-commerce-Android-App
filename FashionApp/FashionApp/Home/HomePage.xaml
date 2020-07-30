@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="FashionApp.Home.HomePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical"  Grid.Row="0" Spacing="0">
+                <Frame Margin="0" Padding="10" HasShadow="False" BackgroundColor="#005eff" CornerRadius="0">
+                    <Label Text="Community" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="White"></Label>
+                </Frame>
+                <Frame Margin="0" Padding="10" HasShadow="False" BackgroundColor="#005eff" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Feed" Margin="0,0,20,0" VerticalOptions="Center" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                            <Label Text="Following" Margin="0,0,20,0" VerticalOptions="Center" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                            <Label Text="Saved" Margin="0,0,20,0" VerticalOptions="Center" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                            <Label Text="Wishlist" Margin="20,0,0,0" VerticalOptions="Center" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                            <Label Text="Filter" Margin="20,0,0,0" VerticalOptions="Center" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+            <Frame Margin="0" Padding="20,15,20,15" HasShadow="False" BackgroundColor="White" Grid.Row="2" CornerRadius="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Grid.Column="0" VerticalOptions="Center">
+                        <ffsvg:SvgCachedImage Source="nearme.svg" HeightRequest="22" HorizontalOptions="Center"></ffsvg:SvgCachedImage>
+                        <Label Text="Near Me" Margin="0,0,20,0" HorizontalOptions="FillAndExpand"
+                               HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Grid.Column="1" VerticalOptions="Center">
+                        <ffsvg:SvgCachedImage Source="search.svg" HeightRequest="22" HorizontalOptions="Center"></ffsvg:SvgCachedImage>
+                        <Label Text="Search" Margin="0,0,20,0" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Search_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Grid.Column="2" VerticalOptions="Center">
+                        <ffsvg:SvgCachedImage Source="home.svg" HeightRequest="22" HorizontalOptions="Center"></ffsvg:SvgCachedImage>
+                        <Label Text="Home" Margin="0,0,20,0" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Grid.Column="3" VerticalOptions="Center">
+                        <ffsvg:SvgCachedImage Source="msg.svg" HeightRequest="22" HorizontalOptions="Center"></ffsvg:SvgCachedImage>
+                        <Label Text="Messages" Margin="0,0,20,0" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Grid.Column="4" VerticalOptions="Center">
+                        <ffsvg:SvgCachedImage Source="bag.svg" HeightRequest="22" HorizontalOptions="Center"></ffsvg:SvgCachedImage>
+                        <Label Text="Shop Bag" Margin="0,0,20,0" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" FontFamily="Rubik-Medium.ttf#Rubik-Medium"></Label>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

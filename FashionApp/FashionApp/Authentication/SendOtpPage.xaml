@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:Custom="clr-namespace:FashionApp.CustomRenderer"
+             mc:Ignorable="d"
+             BackgroundImageSource="BG2.png"
+             x:Class="FashionApp.Authentication.SendOtpPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Margin="0" HasShadow="False" CornerRadius="0" BackgroundColor="#1d212c">
+                <ffsvg:SvgCachedImage Source="backBlue.svg" HeightRequest="20" HorizontalOptions="Start">
+                    <ffsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+                    </ffsvg:SvgCachedImage.GestureRecognizers>
+                </ffsvg:SvgCachedImage>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <StackLayout Spacing="0" Padding="20,0,20,0">
+                    <Label Text="Welcome to Tagisto" Margin="0,20,0,0" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                           FontSize="25" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Label Text="Join / Sign In using" Margin="0,5,0,0" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                           FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    
+                    <Grid Margin="0,35,0,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!-- GOOGLE SIGN IN -->
+
+                        <sh:Shadows Grid.Column="0" Margin="10,0,0,0" x:Name="Google">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#ff001e" ></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="10">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#ff6600"></cutie:GradientStop>
+                                        <cutie:GradientStop Offset=".8" Color="#ff001e"></cutie:GradientStop>
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="GOOGLE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" x:Name="GoogleText"
+                                   VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold" IsVisible="true"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Google_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+                        <ActivityIndicator HeightRequest="2"  Grid.Column="0" IsRunning="True" Color="#fff" Margin="0,10,0,10"
+                                           x:Name="GoogleLoading" IsVisible="false"></ActivityIndicator>
+                        <!-- INSTAGRAM SIGN IN -->
+                        <sh:Shadows Grid.Column="1" Margin="0,0,10,0" x:Name="Insta">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#ff00f5"></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="10">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#ff00f5"></cutie:GradientStop>
+                                        <cutie:GradientStop Offset=".8" Color="#D60F92"></cutie:GradientStop>
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="INSTAGRAM" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" x:Name="InstaText"
+                                   VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold" IsVisible="true"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Insta_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+                        <ActivityIndicator HeightRequest="2"  Grid.Column="1" IsRunning="True" Color="#fff" Margin="0,10,0,10"
+                                           x:Name="InstaLoading" IsVisible="false"></ActivityIndicator>
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Or" TextColor="#bdbdbd" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                               HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="15" Opacity="0.5" Margin="0,10,0,0"/>
+                    </Grid>
+
+
+                    <!-- EMAIL ID -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,20" BackgroundColor="#33394a">
+                            <Custom:PlainEntry
+                                x:Name="Email"
+                                Margin="0"
+                                Placeholder="Enter your email here"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#fff" 
+                                FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                CharacterSpacing="1" 
+                                Text="ksrajath@gmail.com" 
+                                FontSize="13">   
+                            </Custom:PlainEntry>
+                    </cutie:PancakeView>
+                    <Label Text="Please setup your account" Margin="20,0,0,20" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                       FontSize="12" TextColor="#fff" HorizontalOptions="Start"/>
+                    <!-- NAME -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,20" BackgroundColor="#33394a">
+
+                            <Custom:PlainEntry
+                        x:Name="Name"
+                        Margin="0"
+                        Placeholder="Name"
+                        PlaceholderColor="#bdbdbd"
+                        TextColor="#fff" 
+                        FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                        CharacterSpacing="1" 
+                        Text="" 
+                        FontSize="13"
+                    >
+                            </Custom:PlainEntry>
+                    </cutie:PancakeView>
+                    <!-- PASSWORD -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,20" BackgroundColor="#33394a">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Custom:PlainEntry
+                                x:Name="Password"
+                                Margin="0"
+                                Placeholder="Password"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#fff" 
+                                FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                CharacterSpacing="1" 
+                                Text="" 
+                                FontSize="13">
+                            </Custom:PlainEntry>
+                            <ffsvg:SvgCachedImage Grid.Column="1" IsVisible="True" x:Name="OpenEye" Source="show.svg" HeightRequest="20" HorizontalOptions="EndAndExpand">
+                                <ffsvg:SvgCachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OpenEye_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </ffsvg:SvgCachedImage.GestureRecognizers>
+                            </ffsvg:SvgCachedImage>
+                            <ffsvg:SvgCachedImage Grid.Column="1" IsVisible="False" x:Name="CloseEye" Source="hide.svg" HeightRequest="27" HorizontalOptions="EndAndExpand">
+                                <ffsvg:SvgCachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="CloseEye_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </ffsvg:SvgCachedImage.GestureRecognizers>
+                            </ffsvg:SvgCachedImage>
+                        </Grid>
+                    </cutie:PancakeView>
+                    <!-- MOBILE -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,10" BackgroundColor="#33394a">
+                            <Custom:PlainEntry
+                        x:Name="MobileNumber"
+                        Margin="0"
+                        Placeholder="Mobile Number"
+                        PlaceholderColor="#bdbdbd"
+                        TextColor="#fff" 
+                        FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                        CharacterSpacing="1" 
+                        Text="" 
+                        FontSize="13"
+                        >
+                            </Custom:PlainEntry>
+                    </cutie:PancakeView>
+
+                    <Label Text="OTP Will be send to this number" Margin="20,0,0,30" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                       FontSize="12" TextColor="#bdbdbd" HorizontalOptions="Start"/>
+
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!-- SEND OTP -->
+                        <sh:Shadows Grid.Column="0" x:Name="SendOtp" VerticalOptions="Start">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#663df9"></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="10">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#663df9"></cutie:GradientStop>
+                                        <cutie:GradientStop Offset=".8" Color="#6d54f8"></cutie:GradientStop>
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="SEND OTP" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SendOtp_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+            <Frame x:Name="Loading" IsVisible="False" Grid.RowSpan="2" Grid.Row="0" BackgroundColor="Black" HasShadow="False" CornerRadius="0" Opacity="0.7">
+                <ActivityIndicator IsVisible="True" IsRunning="True" Color="#6d54f8" Margin="0,0,0,20"
+                                   HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+            </Frame>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:Custom="clr-namespace:FashionApp.CustomRenderer"
+             NavigationPage.HasNavigationBar="False"
+             mc:Ignorable="d"
+             BackgroundImageSource="BG2.png"
+             x:Class="FashionApp.Authentication.VerifyOtpPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Margin="0" HasShadow="False" CornerRadius="0" BackgroundColor="#1d212c">
+                <ffsvg:SvgCachedImage Source="backBlue.svg" HeightRequest="20" HorizontalOptions="Start">
+                    <ffsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+                    </ffsvg:SvgCachedImage.GestureRecognizers>
+                </ffsvg:SvgCachedImage>
+            </Frame>
+            <ScrollView Grid.Row="1" >
+                <StackLayout Spacing="0" Padding="20,0,20,0" VerticalOptions="FillAndExpand">
+                    <Label Text="Mobile Verification" Margin="0,20,0,0"  TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                       FontSize="25" HorizontalOptions="Start"/>
+                    <Label Text="Please Enter OTP send to" Margin="0,15,0,35" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                       FontSize="13" TextColor="#fff" HorizontalOptions="Start"/>
+
+
+                    <!-- MOBILE -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,20" BackgroundColor="#33394a">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Custom:PlainEntry
+                            x:Name="MobileNumber"
+                            Margin="0"
+                            Placeholder="Mobile Number"
+                            PlaceholderColor="#bdbdbd"
+                            TextColor="#fff" 
+                            FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                            CharacterSpacing="1" 
+                            Text="9857244637" 
+                            FontSize="13"
+                            >
+                            </Custom:PlainEntry>
+                            <Label Grid.Column="1" Text="Edit" TextColor="#447DF0" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                       HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="15" />
+                        </Grid>
+                    </cutie:PancakeView>
+
+                    <!-- OTP -->
+                    <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" Margin="0,0,0,10" BackgroundColor="#33394a">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Custom:PlainEntry
+                            x:Name="OTP"
+                            Margin="0"
+                            Placeholder="Enter the OTP"
+                            PlaceholderColor="#bdbdbd"
+                            TextColor="#fff" 
+                            FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                            CharacterSpacing="1" 
+                            Text="" 
+                            FontSize="13"
+                            >
+                            </Custom:PlainEntry>
+                            <Label Grid.Column="1" Text="Resend" TextColor="#447DF0" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                       HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="15" />
+                        </Grid>
+
+                    </cutie:PancakeView>
+                    <Label Text="OTP Will be expired in 10s" Margin="20,0,0,10" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                       FontSize="12" TextColor="#bdbdbd" HorizontalOptions="Start"/>
+                    <BoxView Color="#33394a" HeightRequest="1"></BoxView>
+
+                    <!-- CONTINUE -->
+                    <StackLayout VerticalOptions="EndAndExpand" Spacing="0">
+                        <sh:Shadows Margin="0,0,0,20" x:Name="Continue">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#005eff"></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="20">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#663df9"></cutie:GradientStop>
+                                        <!-- 005eff -->
+                                        <cutie:GradientStop Offset=".8" Color="#6d54f8"></cutie:GradientStop>
+                                        <!-- 396ff2 -->
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="CONTINUE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" IsVisible="True" x:Name="ContinueText"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Continue_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <Frame x:Name="Loading" IsVisible="False" Grid.RowSpan="2" Grid.Row="0" BackgroundColor="Black" HasShadow="False" CornerRadius="0" Opacity="0.7">
+                <ActivityIndicator IsVisible="True" IsRunning="True" Color="#6d54f8" Margin="0,0,0,20" 
+                                HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:custom="clr-namespace:FashionApp.CustomRenderer" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="FashionApp.Their.Authentication.LoginPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="BG3.png" Aspect="AspectFill" Grid.Row="0" Grid.RowSpan="2"></Image>
+            
+            <StackLayout VerticalOptions="End" Margin="30,0,30,0" Grid.Row="0">
+                <Label Text="Username" TextColor="White" FontSize="12"></Label>
+                <Frame CornerRadius="100" BackgroundColor="#22ffffff" Padding="10,5,10,5">
+                    <custom:PlainEntry Placeholder="Username" FontSize="14" TextColor="White" PlaceholderColor="Wheat"></custom:PlainEntry>
+                </Frame>
+                
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" Margin="30,0,30,0" Grid.Row="1">
+                <Label Text="Password" TextColor="White" ></Label>
+                <Frame CornerRadius="100" BackgroundColor="#22ffffff" Padding="10,5,10,5">
+                    <custom:PlainEntry Placeholder="Password" FontSize="14" TextColor="White" PlaceholderColor="Wheat" IsPassword="True"></custom:PlainEntry>
+                </Frame>
+                <cutie:PancakeView BackgroundColor="White" Padding="15" Margin="90,8,90,10" CornerRadius="100">
+                    <Label Text="Sign in" FontSize="17" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"></Label>
+                </cutie:PancakeView>
+                <Label Text="Continue WIth" FontSize="17" Opacity="0.5" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"></Label>
+                <Grid Margin="0,8,0,0" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <cutie:PancakeView CornerRadius="100" HeightRequest="35" WidthRequest="35" BackgroundColor="#fff" Padding="10"
+                           Grid.Column="0" x:Name="Google" HorizontalOptions="End" >
+                        <ffsvg:SvgCachedImage Source="selected.svg"></ffsvg:SvgCachedImage>
+                    </cutie:PancakeView>
+                    <cutie:PancakeView CornerRadius="100" HeightRequest="35" WidthRequest="35" BackgroundColor="#fff" Padding="10"
+                           Grid.Column="1" x:Name="SMS" HorizontalOptions="Center" Margin="0">
+                        <ffsvg:SvgCachedImage Source="selected.svg"></ffsvg:SvgCachedImage>
+                    </cutie:PancakeView>
+                    <cutie:PancakeView CornerRadius="100" HeightRequest="35" WidthRequest="35" BackgroundColor="#fff" Padding="10"
+                           Grid.Column="2" x:Name="Insta" HorizontalOptions="Start" >
+                        <ffsvg:SvgCachedImage Source="selected.svg"></ffsvg:SvgCachedImage>
+                    </cutie:PancakeView>
+                </Grid>
+                <Label Text="Sign Up" Margin="0,8,0,0" FontSize="17" FontAttributes="Bold" TextColor="White"
+                           VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"></Label>
+                <StackLayout HorizontalOptions="Center" Margin="0,20,10,0" Spacing="1">
+                    <Label Text="By continuing, you agree to our" TextColor="#fff" Opacity="0.5" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                    <Label Text="Terms of Service and Privacy Policy" TextColor="#fff" Opacity="0.5" FontFamily="Rubik-Bold.ttf#Rubik-Bold"
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                </StackLayout>
+                
+            </StackLayout>
+
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:Custom="clr-namespace:FashionApp.CustomRenderer"
+             mc:Ignorable="d"
+             NavigationPage.HasBackButton="True"
+             x:Class="FashionApp.ShoppingBag.EditAddress">
+    <ContentPage.Content>
+            <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" Spacing="10">
+                <!-- PRECAUTION -->
+                <Grid ColumnSpacing="10" Margin="15,10,15,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <ffsvg:SvgCachedImage Source="help.svg" HeightRequest="20" Opacity="0.2" ></ffsvg:SvgCachedImage>
+                    <Label FontSize="14" Text="Please make sure that your address is accurate. It cannot be changed once order is placed" Margin="0,3,0,0"
+                       TextColor="#bdbdbd" FontFamily="Rubik-Regular.ttf#Rubik-Regular" HorizontalOptions="CenterAndExpand" Grid.Column="1"/>
+                </Grid>
+                <!-- USE CURRENT LOCATION -->
+                <Frame BackgroundColor="White" CornerRadius="0" HasShadow="False">
+                    <Grid ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <ffsvg:SvgCachedImage Source="locationSelect.svg" HeightRequest="20"></ffsvg:SvgCachedImage>
+                        <Label FontSize="14" Text="Use my current location" TextColor="#005eff" FontFamily="Rubik-Medium.ttf#Rubik-Medium" Margin="0,3,0,0"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="Start" x:Name="CurrentLocationText" Grid.Column="1">
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <!-- ADDRESS EDIT -->
+                <Frame VerticalOptions="Start" BackgroundColor="White" CornerRadius="0" HasShadow="False" Padding="15,7,15,8">
+                        <Grid ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label FontSize="14" Text="Name" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="0"  VerticalOptions="Center" ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="0" 
+                                Text=""
+                                x:Name="Name"
+                                Keyboard="Chat"
+                                Placeholder="Enter your name"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="StartAndExpand"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"></BoxView>
+                            <Label FontSize="14" Text="Pincode" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="2"  VerticalOptions="Center" ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="2" 
+                                x:Name="Pincode"
+                                Text=""
+                                Keyboard="Numeric"
+                                Placeholder="Pincode"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"></BoxView>
+                            <Label FontSize="14" Text="Address" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="4"  VerticalOptions="Center" ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="4" 
+                                x:Name="Address"
+                                Keyboard="Chat"
+                                Text=""
+                                Placeholder="Address"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5"></BoxView>
+                            <Label FontSize="14" Text="Landmark" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="6" VerticalOptions="Center" ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="6" 
+                                x:Name="Landmark"
+                                Text=""
+                                Keyboard="Chat"
+                                Placeholder="Landmark"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7"></BoxView>
+                            <Label FontSize="14" Text="City" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="8" VerticalOptions="Center"  ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="8" 
+                                x:Name="City"
+                                Text=""
+                                Keyboard="Chat"
+                                Placeholder="City"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9"></BoxView>
+                            <Label FontSize="14" Text="State" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="10" VerticalOptions="Center" ></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="10" 
+                                x:Name="State"
+                                Text=""
+                                Keyboard="Chat"
+                                Placeholder="State"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" ></BoxView>
+                            <Label FontSize="14" Text="Phone Number" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="12" VerticalOptions="Center"></Label>
+                            <Custom:PlainEntry
+                                Grid.Column="1"
+                                Grid.Row="12" 
+                                x:Name="PhoneNumber"
+                                Text=""
+                                Keyboard="Telephone"
+                                Placeholder="Mobile Number"
+                                PlaceholderColor="#bdbdbd"
+                                TextColor="#455575" 
+                                VerticalOptions="Center"
+                                FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                CharacterSpacing="1" 
+                                HorizontalOptions="Start"
+                                FontSize="14">
+                            </Custom:PlainEntry>
+                            <BoxView Color="#f4f4f4" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="13" ></BoxView>
+                            
+                            
+                            <!-- USE AS DEFAULT ADDRESS -->
+                            <Label FontSize="14" Text="Use as default" Margin="0,0,0,0" TextColor="#455575" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                   Grid.Column="0" Grid.Row="14" VerticalOptions="Center" ></Label>
+                            
+                            <Switch IsToggled="false"
+                                    x:Name="Default"
+                                    Grid.Column="1"
+                                    OnColor="#005eff"
+                                    ThumbColor="#455575"
+                                    Margin="0,5,0,5"
+                                    Grid.Row="14"
+                                    HorizontalOptions="End">
+                            </Switch>
+
+                    </Grid>
+                    </Frame>
+                    
+                    <!-- SAVE -->
+                    <Frame Padding="20,15,20,15" VerticalOptions="Start" BackgroundColor="White" CornerRadius="0" HasShadow="False" x:Name="Save">
+
+                        <Label FontSize="15" Text="SAVE" TextColor="#ff370e" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" x:Name="SaveText">
+                        </Label>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Save_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

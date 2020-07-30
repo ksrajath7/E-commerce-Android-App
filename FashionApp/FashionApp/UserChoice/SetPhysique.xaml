@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:Custom="clr-namespace:FashionApp.CustomRenderer" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1D212C"
+             x:Class="FashionApp.UserChoice.SetPhysique">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Margin="0" HasShadow="False" CornerRadius="0" BackgroundColor="#1d212c">
+                <ffsvg:SvgCachedImage Source="backBlue.svg" HeightRequest="20" HorizontalOptions="Start">
+                    <ffsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+                    </ffsvg:SvgCachedImage.GestureRecognizers>
+                </ffsvg:SvgCachedImage>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <StackLayout Spacing="0" Padding="20,0,20,0" VerticalOptions="FillAndExpand">
+                    <Label Text="Set Gender and Physique" Margin="0,20,0,0" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                               FontSize="35" HorizontalOptions="Start"/>
+                    <Label Text="Fill your details to improve experience with better recommendations" Margin="0,15,0,35" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                               FontSize="18" TextColor="#fff" HorizontalOptions="Start"/>
+
+                    <Grid Margin="0,0,0,15" RowSpacing="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- GENDER -->
+                        <Label Text="Gender" CharacterSpacing="2" Margin="0,0,0,0" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                               FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                        <!-- MALE -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="1" 
+                                           BackgroundColor="#1D212C" Grid.Column="0" x:Name="Male">
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Male_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="MALE" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+                        <!-- FEMALE -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="1" 
+                                           BackgroundColor="#6d54f8" Grid.Column="1" x:Name="Female" >
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Female_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="FEMALE" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+                        <!-- TRANS -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="1" 
+                                           BackgroundColor="#1D212C" Grid.Column="2" x:Name="Trans">
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Trans_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="TRANS" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+
+                        <!-- SKIN TONE -->
+                        <Label Text="Skin Tone" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" Margin="0,15,0,0"
+                               FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                        <!-- COLORS -->
+                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" ColumnSpacing="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Frame CornerRadius="100" HeightRequest="15" WidthRequest="15" BackgroundColor="#C37500" BorderColor="#fff" Grid.Column="0"
+                                   x:Name="Frame1">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Frame1_Tapped"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame CornerRadius="100" HeightRequest="15" WidthRequest="15" BackgroundColor="#E28800" BorderColor="#fff" Grid.Column="1"
+                                   x:Name="Frame2">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Frame2_Tapped"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame CornerRadius="100" HeightRequest="15" WidthRequest="15" BackgroundColor="#FDBC5A" BorderColor="#fff" Grid.Column="2"
+                                   x:Name="Frame3">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Frame3_Tapped"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame CornerRadius="100" HeightRequest="15" WidthRequest="15" BackgroundColor="#FFD28D" BorderColor="#fff" Grid.Column="3"
+                                   x:Name="Frame4">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Frame4_Tapped"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <ffsvg:SvgCachedImage Source="selected.svg" Grid.Column="0" Margin="15" x:Name="CheckCircle1" IsVisible="true"></ffsvg:SvgCachedImage>
+                            <ffsvg:SvgCachedImage Source="selected.svg" Grid.Column="1" Margin="15" x:Name="CheckCircle2" IsVisible="false"></ffsvg:SvgCachedImage>
+                            <ffsvg:SvgCachedImage Source="selected.svg" Grid.Column="2" Margin="15" x:Name="CheckCircle3" IsVisible="false"></ffsvg:SvgCachedImage>
+                            <ffsvg:SvgCachedImage Source="selected.svg" Grid.Column="3" Margin="15" x:Name="CheckCircle4" IsVisible="false"></ffsvg:SvgCachedImage>
+                        </Grid>
+
+                        <!-- BODY TYPE -->
+                        <Label Text="Body Type" CharacterSpacing="2" Margin="0,15,0,0" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                               FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+                        <!-- SKINNY -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="5" 
+                                           BackgroundColor="#1D212C" Grid.Column="0" x:Name="Skinny" >
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Skinny_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="SKINNY" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+                        <!-- AVERAGE -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="5" 
+                                           BackgroundColor="#1D212C" Grid.Column="1"  x:Name="Average">
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Average_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="AVERAGE" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+                        <!-- FATTY -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="5" 
+                                           BackgroundColor="#6d54f8" Grid.Column="2"  x:Name="Fatty">
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Fatty_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                            <Label Text="FATTY" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+                        
+                        
+                        
+                        <!-- HEIGHT -->
+                        <Label Text="Height" CharacterSpacing="2" Margin="0,15,0,0" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                               FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        
+                        <!-- SCALE -->
+                        <cutie:PancakeView CornerRadius="100" Padding="10,15,10,15"  Grid.Row="7" 
+                                           BackgroundColor="#1D212C" Grid.Column="1" >
+                            <cutie:PancakeView.Border>
+                                <cutie:Border Color="#33394a"  Thickness="1"></cutie:Border>
+                            </cutie:PancakeView.Border>
+
+                            <Label Text="175CM" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13"
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                        </cutie:PancakeView>
+
+
+
+                    </Grid>
+
+
+                    <!-- RULER -->
+
+                    <CollectionView x:Name="Ruler" ItemsLayout="HorizontalList" VerticalOptions="Start" ScrollToRequested="Ruler_ScrollToRequested_1">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" Margin="20" TextColor="White" FontSize="30"></Label>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView> 
+                    
+
+
+                    <!-- CONTINUE -->
+                    <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                        <sh:Shadows Margin="0,0,0,20" x:Name="Continue">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#005eff"></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="20">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#663df9"></cutie:GradientStop>
+                                        <!-- 005eff -->
+                                        <cutie:GradientStop Offset=".8" Color="#6d54f8"></cutie:GradientStop>
+                                        <!-- 396ff2 -->
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="CONTINUE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" IsVisible="True" x:Name="ContinueText"
+                                   VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Continue_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+            <Frame x:Name="Loading" IsVisible="False" Grid.RowSpan="2" Grid.Row="0" BackgroundColor="Black" HasShadow="False" CornerRadius="0" Opacity="0.7">
+                <ActivityIndicator IsVisible="True" IsRunning="True" Color="#6d54f8" Margin="0,0,0,20" 
+                                HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

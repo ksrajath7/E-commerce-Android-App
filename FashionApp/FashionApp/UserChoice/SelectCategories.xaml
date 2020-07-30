@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="#1D212C"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="FashionApp.UserChoice.SelectCategories">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Margin="0" HasShadow="False" CornerRadius="0" BackgroundColor="#1d212c">
+                <ffsvg:SvgCachedImage Source="backBlue.svg" HeightRequest="20" HorizontalOptions="Start">
+                    <ffsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"></TapGestureRecognizer>
+                    </ffsvg:SvgCachedImage.GestureRecognizers>
+                </ffsvg:SvgCachedImage>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <StackLayout Spacing="0" Padding="20,0,20,0" VerticalOptions="FillAndExpand">
+                    <Label Text="Tag your Categories" Margin="0,20,0,0" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                               FontSize="35" HorizontalOptions="Start"/>
+                    <Label Text="Select your categories to improve experience with better recommendations" Margin="0,15,0,35" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                               FontSize="18" TextColor="#fff" HorizontalOptions="Start"/>
+                    <!-- CATEGORIES -->
+                    <StackLayout Spacing="10">
+                        <!-- FIRST ROW -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="All" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Casuals" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start" BackgroundColor="#6d54f8">
+                                <!-- FORMALS -->
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#6d54f8"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Formals" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"  HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Kids Wear" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                        </StackLayout>
+                        <!-- SECOND ROW -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Jackets" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Jewellery" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Mens Wear" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                        </StackLayout>
+                        <!-- THIRD ROW -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Womens Wear" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Accessories" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                            <cutie:PancakeView CornerRadius="100" Padding="15" HorizontalOptions="Start">
+                                <cutie:PancakeView.Border>
+                                    <cutie:Border Color="#33394a"  Thickness="2"></cutie:Border>
+                                </cutie:PancakeView.Border>
+                                <Label Text="Wedding" CharacterSpacing="2" FontFamily="Rubik-Medium.ttf#Rubik-Medium" FontSize="13" 
+                                   TextColor="#fff"   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                            </cutie:PancakeView>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <!-- CONTINUE -->
+                    <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                        <sh:Shadows Margin="0,0,0,20" x:Name="Continue">
+                            <sh:Shadows.Shades>
+                                <sh:ImmutableShades>
+                                    <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#005eff"></sh:Shade>
+                                </sh:ImmutableShades>
+                            </sh:Shadows.Shades>
+                            <cutie:PancakeView CornerRadius="3" Padding="20">
+                                <cutie:PancakeView.BackgroundGradientStops>
+                                    <cutie:GradientStopCollection>
+                                        <cutie:GradientStop Offset=".2" Color="#663df9"></cutie:GradientStop>
+                                        <!-- 005eff -->
+                                        <cutie:GradientStop Offset=".8" Color="#6d54f8"></cutie:GradientStop>
+                                        <!-- 396ff2 -->
+                                    </cutie:GradientStopCollection>
+                                </cutie:PancakeView.BackgroundGradientStops>
+                                <Label FontSize="18" Text="CONTINUE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" IsVisible="True" x:Name="ContinueText"
+                                   VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                                <cutie:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Continue_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </cutie:PancakeView.GestureRecognizers>
+                            </cutie:PancakeView>
+                        </sh:Shadows>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            <Frame x:Name="Loading" IsVisible="False" Grid.RowSpan="2" Grid.Row="0" BackgroundColor="Black" HasShadow="False" CornerRadius="0" Opacity="0.7">
+                <ActivityIndicator IsVisible="True" IsRunning="True" Color="#6d54f8" Margin="0,0,0,20" 
+                                HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

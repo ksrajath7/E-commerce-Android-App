@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             Title="SELECT ADDRESS"
+             x:Class="FashionApp.ShoppingBag.SelectAddress">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout VerticalOptions="FillAndExpand">
+
+                    <!-- TIMELINE -->
+                    <Frame Padding="15,10,15,10" VerticalOptions="Start" BackgroundColor="White" CornerRadius="0" HasShadow="False">
+                        <ffsvg:SvgCachedImage Source="timeline1.svg" HeightRequest="33"></ffsvg:SvgCachedImage>
+                    </Frame>
+                    <!-- ADD AN ADDRESS -->
+                    <Frame VerticalOptions="Start" BackgroundColor="White" CornerRadius="0" HasShadow="False">
+                        
+                            <Label FontSize="14" Text="+  Add an address" TextColor="#005eff" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="Start" x:Name="AddAnAddress">
+                                <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AddAddress_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                    </Frame>
+                    <Frame VerticalOptions="Start" BackgroundColor="White" CornerRadius="0" HasShadow="False">
+                        <!-- COLLECTIONVIEW FOR ALL ADDRESS WITH RADIO BUTTON -->
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label FontSize="14" Text="Radio" Margin="0,0,20,0" TextColor="#005eff" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   Grid.Column="0" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+                            <StackLayout Grid.Column="1" Spacing="0">
+                                <Label FontSize="14" Text="Rajath K S" x:Name="Name" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                </Label>
+                                <Label FontSize="14" Text="Kizhiyedath Mana" x:Name="Address" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                </Label>
+                                <Label FontSize="14" Text="Adiyodippadi" x:Name="Landmark" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                </Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="14" Text="675643" x:Name="Pincode" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                    </Label>
+                                    <Label FontSize="14" Text="Palakkad" x:Name="City" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                    </Label>
+                                    <Label FontSize="14" Text="Kerala" x:Name="State" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                    </Label>
+                                </StackLayout>
+                                
+                                <Label FontSize="14" Text="Ph: 8665432456" x:Name="PhoneNumber" TextColor="#455575" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   HorizontalOptions="Start">
+                                </Label>
+                            </StackLayout>
+                            <!-- EDIT ADDRESS -->
+                            <Label  Text="Edit" TextColor="#005eff" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                                   Grid.Column="2" HorizontalTextAlignment="Center"  VerticalOptions="StartAndExpand" HorizontalOptions="End">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="EditAddress_Tapped"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            
+                    <cutie:PancakeView Grid.Row="1" CornerRadius="0" BorderColor="#f4f4f4" Padding="20,22,20,23">
+                        <cutie:PancakeView.BackgroundGradientStops>
+                            <cutie:GradientStopCollection>
+                                <cutie:GradientStop Offset=".2" Color="#005eff"></cutie:GradientStop>
+                                <cutie:GradientStop Offset=".8" Color="#396ff2"></cutie:GradientStop>
+                            </cutie:GradientStopCollection>
+                        </cutie:PancakeView.BackgroundGradientStops>
+                <Label FontSize="18" Text="DELIVER HERE" CharacterSpacing="2" TextColor="#fff" HorizontalTextAlignment="Center" x:Name="DeliverHereText"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                        <cutie:PancakeView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="DeliverHere_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </cutie:PancakeView.GestureRecognizers>
+            </cutie:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

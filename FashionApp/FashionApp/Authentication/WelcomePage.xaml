@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:cutie="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows" xmlns:Custom="clr-namespace:FashionApp.CustomRenderer"
+             mc:Ignorable="d"
+             BackgroundColor="#1d212c"
+             BackgroundImageSource="BG1.png"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="FashionApp.Authentication.WelcomePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!-- NAVIGATION BAR -->
+            
+
+
+            <StackLayout Grid.Row="1" Spacing="0" Padding="30,0,30,0">
+                
+                <ffsvg:SvgCachedImage></ffsvg:SvgCachedImage>
+                <Label Text="Welcome to Tagisto" Margin="0,0,0,0" TextColor="White" FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                       FontSize="35" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Label Text="Join / Sign In using" Margin="0,5,0,0" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                       FontSize="13" TextColor="#fff" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Grid Margin="0,35,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- GOOGLE SIGN IN -->
+                    
+                    <sh:Shadows Grid.Column="0" x:Name="Google">
+                        <sh:Shadows.Shades>
+                            <sh:ImmutableShades>
+                                <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#ff001e" ></sh:Shade>
+                            </sh:ImmutableShades>
+                        </sh:Shadows.Shades>
+                        <cutie:PancakeView CornerRadius="3" Padding="10">
+                            <cutie:PancakeView.BackgroundGradientStops>
+                                <cutie:GradientStopCollection>
+                                    <cutie:GradientStop Offset=".2" Color="#ff6600"></cutie:GradientStop>
+                                    <cutie:GradientStop Offset=".8" Color="#ff001e"></cutie:GradientStop>
+                                </cutie:GradientStopCollection>
+                            </cutie:PancakeView.BackgroundGradientStops>
+                            <Label FontSize="18" Text="GOOGLE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" x:Name="GoogleText"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold" IsVisible="true"></Label>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Google_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                        </cutie:PancakeView>
+                    </sh:Shadows>
+                    <ActivityIndicator HeightRequest="2"  Grid.Column="0" IsRunning="True" Color="#fff" Margin="0,10,0,10"
+                                       x:Name="GoogleLoading" IsVisible="false"></ActivityIndicator>
+                    <!-- INSTAGRAM SIGN IN -->
+                    <sh:Shadows Grid.Column="1"  x:Name="Insta">
+                        <sh:Shadows.Shades>
+                            <sh:ImmutableShades>
+                                <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#ff00f5"></sh:Shade>
+                            </sh:ImmutableShades>
+                        </sh:Shadows.Shades>
+                        <cutie:PancakeView CornerRadius="3" Padding="10">
+                            <cutie:PancakeView.BackgroundGradientStops>
+                                <cutie:GradientStopCollection>
+                                    <cutie:GradientStop Offset=".2" Color="#ff00f5"></cutie:GradientStop>
+                                    <cutie:GradientStop Offset=".8" Color="#D60F92"></cutie:GradientStop>
+                                </cutie:GradientStopCollection>
+                            </cutie:PancakeView.BackgroundGradientStops>
+                            <Label FontSize="18" Text="INSTAGRAM" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" x:Name="InstaText"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold" IsVisible="true"></Label>
+                            <cutie:PancakeView.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Insta_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </cutie:PancakeView.GestureRecognizers>
+                        </cutie:PancakeView>
+                    </sh:Shadows>
+                    <ActivityIndicator HeightRequest="2"  Grid.Column="1" IsRunning="True" Color="#fff" Margin="0,10,0,10"
+                                       x:Name="InstaLoading" IsVisible="false"></ActivityIndicator>
+                    <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Or" TextColor="#bdbdbd" FontFamily="Rubik-Regular.ttf#Rubik-Regular"
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="15" Opacity="0.5" Margin="0,10,0,0"/>
+                </Grid>
+
+                
+
+                <!-- EMAIL ID -->
+                <cutie:PancakeView CornerRadius="5" Padding="20,10,20,10" BackgroundColor="#33394a">
+                    <Custom:PlainEntry
+                        x:Name="Email"
+                        Margin="0"
+                        Placeholder="Enter your email here"
+                        PlaceholderColor="#bdbdbd"
+                        TextColor="#fff" 
+                        FontFamily="Rubik-Medium.ttf#Rubik-Medium"
+                        CharacterSpacing="1" 
+                        FontSize="13"
+                    >
+                    </Custom:PlainEntry>
+                </cutie:PancakeView>
+            </StackLayout>
+            <!-- CONTINUE -->
+            <StackLayout Grid.Row="2" Spacing="0">
+                <sh:Shadows Margin="30,0,30,0" x:Name="Continue">
+                    <sh:Shadows.Shades>
+                        <sh:ImmutableShades>
+                            <sh:Shade BlurRadius="5" Opacity="0.36" Offset="2,4" Color="#005eff"></sh:Shade>
+                        </sh:ImmutableShades>
+                    </sh:Shadows.Shades>
+                    <cutie:PancakeView CornerRadius="3" Padding="20">
+                        <cutie:PancakeView.BackgroundGradientStops>
+                            <cutie:GradientStopCollection>
+                                <cutie:GradientStop Offset=".2" Color="#663df9"></cutie:GradientStop>
+                                <!-- 005eff -->
+                                <cutie:GradientStop Offset=".8" Color="#6d54f8"></cutie:GradientStop>
+                                <!-- 396ff2 -->
+                            </cutie:GradientStopCollection>
+                        </cutie:PancakeView.BackgroundGradientStops>
+                            <Label FontSize="18" Text="CONTINUE" CharacterSpacing="1" TextColor="#fff" HorizontalTextAlignment="Center" IsVisible="True" x:Name="ContinueText"
+                               VerticalOptions="Center" HorizontalOptions="Center" FontFamily="Quicksand-Bold.ttf#Quicksand-Bold"></Label>
+                        <cutie:PancakeView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Continue_Tapped"  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </cutie:PancakeView.GestureRecognizers>
+                    </cutie:PancakeView>
+                </sh:Shadows>
+                <!-- TERMS AND CONDITIONS -->
+                <Label Text="By continuing, you agree to our" TextColor="#6d54f8" Margin="10,10,10,0" FontFamily="Rubik-Regular.ttf#Rubik-Regular" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="Terms of Service and Privacy Policy" TextColor="#6d54f8" Margin="10,0,10,10" FontFamily="Rubik-Bold.ttf#Rubik-Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                
+            </StackLayout>
+
+            <Frame x:Name="Loading" IsVisible="False" Grid.RowSpan="3" Grid.Row="0" BackgroundColor="Black" HasShadow="False" CornerRadius="0" Opacity="0.7">
+                <ActivityIndicator IsVisible="True" IsRunning="True" Color="#6d54f8" Margin="0,0,0,20" 
+                                HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
