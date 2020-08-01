@@ -1,4 +1,4 @@
-1. Clone this repository in your machine
+1. Clone this repository into your machine
 
 2. Clean the solution and delete all bin and obj folders from all projects.
 
